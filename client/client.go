@@ -60,8 +60,7 @@ func setupRoutes() {
 		fmt.Println(error)
 	}
 	defer c.Close()
-	go func(){
-		for {
+	for {
 		_,mesg,err := c.ReadMessage()
 		if err != nil{
 			log.Println(err)
@@ -69,8 +68,8 @@ func setupRoutes() {
 			return
 		}
 		fmt.Println(string(mesg))
+
 	}
-	}()
 	// ioutil.ReadAll(connection)
 	// resp, err := http.Get("http://localhost:8080/ws")
 	// defer resp.Body.Close()
