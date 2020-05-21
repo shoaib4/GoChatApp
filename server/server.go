@@ -36,7 +36,7 @@ func reader(conn *websocket.Conn) {
 		}
 		fmt.Println(string(p))
 
-		if err := conn.WriteMessage(messageType, []byte(("server said Brooo") + string(p)) ); err != nil {
+		if err := conn.WriteMessage(messageType, []byte(("server said Brooo :-")+string(p))); err != nil {
 			log.Println("error while Writtong by server")
 			return
 		}
@@ -51,4 +51,5 @@ func main() {
 	fmt.Println("Helllll")
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
+
 // config file - run
