@@ -36,10 +36,8 @@ func readIOandWriteToServer(c *websocket.Conn) {
 			fmt.Println("Unknown command ")
 			continue
 		}
-		command := strings.Split(text, " ")[0]
-		text = strings.Join(strings.Split(text, " ")[1:], " ")
 		c.WriteMessage(websocket.TextMessage, []byte(text))
-		fmt.Println(command, "   ::::  ", text)
+		fmt.Println(text)
 	}
 }
 func setupRoutes() {
@@ -49,7 +47,7 @@ func setupRoutes() {
 	// log.Printf("connecting to %s", u.String())
 	// fmt.Println("Starting client...",u.String())
 	c, _, error := websocket.DefaultDialer.Dial("ws://localhost:8080/ws", nil)
-	c.WriteMessage(websocket.TextMessage, []byte("bitchhhhh started..."))
+	c.WriteMessage(websocket.TextMessage, []byte("e bitchhhhh started..."))
 	// _, error := net.Dial("tcp", "localhost:8080")
 	if error != nil {
 		fmt.Println(error)
