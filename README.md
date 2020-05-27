@@ -21,9 +21,9 @@ ws, err := upgrader.Upgrade(w, r, nil)
 
 ### Message types
 * `c1 myMessage` 
-... This sends "myMessage" to first client
+    This sends "myMessage" to first client
 * `g2 myMessage`
-... This sends "myMessage" to all clients in second group (here 1,3 is hard code)
+    This sends "myMessage" to all clients in second group (here 1,3 is hard code)
 
 # Things I Learned
 1. Golang
