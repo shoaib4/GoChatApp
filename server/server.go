@@ -101,7 +101,7 @@ func reader(conn *websocket.Conn) {
 			return
 		}
 		command, message := getCommandAndMessage(string(p))
-		fmt.Println("read this   :: ", command, message)
+		fmt.Println("server read this   :: ", command, message)
 
 		err = exicuteCommand(conn, messageType, command, message)
 		if err != nil {
@@ -116,11 +116,10 @@ func setupRoutes() {
 	http.HandleFunc("/ws", webSocketsEndpoint)
 }
 func main() {
+	// hard coded the gropes for now
 	webSocketGroupMap[2] = append(webSocketGroupMap[2], 1)
 	webSocketGroupMap[2] = append(webSocketGroupMap[2], 3)
 	setupRoutes()
-	fmt.Println("Helllll")
+	fmt.Println("started server")
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
-
-// config file - run

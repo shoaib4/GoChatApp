@@ -33,14 +33,12 @@ func readIOandWriteToServer(c *websocket.Conn) {
 		fmt.Println(text)
 	}
 }
-func setupRoutes() {
-	// http.HandleFunc("/", homePageEndpoint)
-	// http.HandleFunc("/ws", webSocketsEndpoint)
+func setupClient() {
 	// u := url.URL{Scheme: "ws", Host: *addr, Path: "/ws"}
 	// log.Printf("connecting to %s", u.String())
 	// fmt.Println("Starting client...",u.String())
 	c, _, error := websocket.DefaultDialer.Dial("ws://localhost:8080/ws", nil)
-	c.WriteMessage(websocket.TextMessage, []byte("e bitchhhhh started..."))
+	c.WriteMessage(websocket.TextMessage, []byte("e first test message ..."))
 	// _, error := net.Dial("tcp", "localhost:8080")
 	if error != nil {
 		fmt.Println(error)
@@ -53,7 +51,7 @@ func setupRoutes() {
 
 }
 func main() {
-	setupRoutes()
-	fmt.Println("Helllll")
+	setupClient()
+	fmt.Println("started client")
 	// log.Fatal(http.ListenAndServe(":8080", nil))
 }
