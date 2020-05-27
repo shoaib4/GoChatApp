@@ -1,5 +1,5 @@
 # GoChatApp
-This is my first golang project, I created it with minimalistic code and only implemented the nesseary functionality. I tryed to male it as simple as possible. 
+This is my first golang project, I created it with minimalistic code and only implemented the nesseary functionality. I tried to make it as simple as possible. 
 
 # In Client
 * Client needs to innitiate the socker connection by hitting some url `ws://localhost:8080/ws`
