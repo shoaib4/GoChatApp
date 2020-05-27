@@ -29,6 +29,10 @@ ws, err := upgrader.Upgrade(w, r, nil)
 1. Golang
 2. goroutines 
 3. Cammand line interface in Golang
+````golang
+    reader := bufio.NewReader(os.Stdin)
+    text, _ := reader.ReadString('\n')
+````
 4. Socket programming in Golang   
 
 # Things to be done 
