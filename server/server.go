@@ -8,6 +8,7 @@ import (
 	"strconv"
 	"strings"
 
+	// https://www.gorillatoolkit.org/pkg/websocke
 	"github.com/gorilla/websocket"
 )
 
@@ -18,7 +19,6 @@ var upgrader = websocket.Upgrader{
 var webSocketMap map[int]*websocket.Conn = make(map[int]*websocket.Conn)
 
 var webSocketGroupMap map[int][]int = make(map[int][]int)
-
 
 var nextSocketNumber int = 1
 
@@ -82,7 +82,7 @@ func exicuteCommand(conn *websocket.Conn, messageType int, command string, messa
 				}
 			}
 		}
-		
+
 	} else {
 		return errors.New("Socket with that Id not found")
 	}

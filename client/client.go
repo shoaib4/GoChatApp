@@ -6,13 +6,6 @@ import (
 	"log"
 	"os"
 	"strings"
-
-	// "flag"
-	// // "net"
-	// "log"
-	// "net/url"
-	// "io/ioutil"
-	// "net/http"
 	"github.com/gorilla/websocket"
 )
 func readFromServer(c *websocket.Conn){
